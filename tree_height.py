@@ -18,7 +18,7 @@ def compute_height(n, vecaki):
             h[i] = augst
     return max(h)
 def main():
-    inpt = input().upper()
+    inpt = input()
     vecaki = None
     n = None
     if inpt == "I":
