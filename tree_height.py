@@ -18,15 +18,17 @@ def compute_height(n, vecaki):
             h[i] = augst
     return max(h)
 
+
 def main():
-    inpt = input().split("\\r\\n")
+    inpt = input()
     vecaki = None
     n = None
     if inpt[0] == "I":
-        n = int(inpt[1])
-        vecaki = list(map(int, inpt[2].split()))
+        _, n, vecaki_input = inpt.split("\\r\\n")
+        n = int(n)
+        vecaki = list(map(int, vecaki_input.split()))
     elif inpt[0] == "F":
-        filen = inpt[1]
+        filen = inpt[2:].strip()
         if "a" in filen.lower():
             print("a not allowed")
             return
@@ -42,6 +44,7 @@ def main():
         print("Incorrect input")
         return
     print(compute_height(n, vecaki))
+
 
 # In Python, the default limit on recursion depth is rather low,
 # so raise it here for this problem. Note that to take advantage
